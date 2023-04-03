@@ -27,4 +27,5 @@ done
 
 # move proto files to the right places
 cp -r github.com/crescent-network/crescent/v5/* ./
+cp -r github.com/jesse-pinkman-cre/crescent/* ./
 rm -rf github.com
