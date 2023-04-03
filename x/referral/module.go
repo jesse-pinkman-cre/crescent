@@ -17,9 +17,9 @@ import (
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 	abci "github.com/tendermint/tendermint/abci/types"
 
-	"github.com/cosmos-builders/chaos/x/amm/client/cli"
-	"github.com/cosmos-builders/chaos/x/amm/keeper"
-	"github.com/cosmos-builders/chaos/x/amm/types"
+	"github.com/jesse-pinkman-cre/crescent/x/referral/client/cli"
+	"github.com/jesse-pinkman-cre/crescent/x/referral/keeper"
+	"github.com/jesse-pinkman-cre/crescent/x/referral/types"
 )
 
 var (

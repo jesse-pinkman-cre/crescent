@@ -3,8 +3,8 @@ package keeper
 import (
 	"context"
 
-	"github.com/cosmos-builders/chaos/x/amm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/jesse-pinkman-cre/crescent/x/referral/types"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 )

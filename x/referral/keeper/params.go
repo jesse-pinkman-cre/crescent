@@ -1,8 +1,8 @@
 package keeper
 
 import (
-	"github.com/cosmos-builders/chaos/x/amm/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	"github.com/jesse-pinkman-cre/crescent/x/referral/types"
 )
 
 // GetParams get all parameters as types.Params

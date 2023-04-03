@@ -1,4 +1,4 @@
-module github.com/crescent-network/crescent/referral
+module github.com/jesse-pinkman-cre/crescent/referral
 
 go 1.18
 

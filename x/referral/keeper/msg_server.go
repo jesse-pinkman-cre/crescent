@@ -1,7 +1,7 @@
 package keeper
 
 import (
-	"github.com/cosmos-builders/chaos/x/amm/types"
+	"github.com/jesse-pinkman-cre/crescent/x/referral/types"
 	//"github.com/jesse-pinkman-cre/crescent/x/referral/types"
 )
 
