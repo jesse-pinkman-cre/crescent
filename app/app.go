@@ -143,6 +143,10 @@ import (
 	mintkeeper "github.com/crescent-network/crescent/v5/x/mint/keeper"
 	minttypes "github.com/crescent-network/crescent/v5/x/mint/types"
 
+	"github.com/jesse-pinkman-cre/crescent/x/referral"
+	referralkeeper "github.com/jesse-pinkman-cre/crescent/x/referral/keeper"
+	referraltypes "github.com/jesse-pinkman-cre/crescent/x/referral/types"
+
 	// unnamed import of statik for swagger UI support
 	_ "github.com/crescent-network/crescent/v5/client/docs/statik"
 )
@@ -193,6 +197,7 @@ var (
 		lpfarm.AppModuleBasic{},
 		ica.AppModuleBasic{},
 		marker.AppModuleBasic{},
+		referral.AppModuleBasic{},
 	)
 
 	// module account permissions
@@ -213,6 +218,7 @@ var (
 		marketmakertypes.ModuleName:    nil,
 		lpfarmtypes.ModuleName:         nil,
 		icatypes.ModuleName:            nil,
+		referraltypes.ModuleName:       {authtypes.Minter, authtypes.Burner},
 	}
 )
 
@@ -266,6 +272,7 @@ type App struct {
 	LPFarmKeeper        lpfarmkeeper.Keeper
 	ICAHostKeeper       icahostkeeper.Keeper
 	MarkerKeeper        markerkeeper.Keeper
+	ReferralKeeper      referralkeeper.Keeper
 
 	// scoped keepers
 	ScopedIBCKeeper      capabilitykeeper.ScopedKeeper
@@ -343,6 +350,7 @@ func NewApp(
 		lpfarmtypes.StoreKey,
 		icahosttypes.StoreKey,
 		markertypes.StoreKey,
+		referraltypes.StoreKey,
 	)
 	tkeys := sdk.NewTransientStoreKeys(paramstypes.TStoreKey)
 	memKeys := sdk.NewMemoryStoreKeys(capabilitytypes.MemStoreKey)
@@ -597,6 +605,13 @@ func NewApp(
 		app.GetSubspace(markertypes.ModuleName),
 	)
 
+	app.ReferralKeeper = referralkeeper.NewKeeper(
+		appCodec,
+		keys[referraltypes.StoreKey],
+		app.GetSubspace(referraltypes.ModuleName),
+		app.BankKeeper,
+	)
+
 	// create static IBC router, add transfer route, then set and seal it
 	ibcRouter := porttypes.NewRouter()
 
@@ -642,6 +657,7 @@ func NewApp(
 		marketmaker.NewAppModule(appCodec, app.MarketMakerKeeper, app.AccountKeeper, app.BankKeeper),
 		lpfarm.NewAppModule(appCodec, app.LPFarmKeeper, app.AccountKeeper, app.BankKeeper, app.LiquidityKeeper),
 		marker.NewAppModule(appCodec, app.MarkerKeeper),
+		referral.NewAppModule(appCodec, app.ReferralKeeper, app.AccountKeeper, app.BankKeeper),
 		app.transferModule,
 		app.icaModule,
 	)
@@ -681,6 +697,7 @@ func NewApp(
 		marketmakertypes.ModuleName,
 		icatypes.ModuleName,
 		markertypes.ModuleName,
+		referraltypes.ModuleName,
 	)
 	app.mm.SetOrderEndBlockers(
 		// EndBlocker of crisis module called AssertInvariants
@@ -715,6 +732,7 @@ func NewApp(
 		icatypes.ModuleName,
 
 		markertypes.ModuleName,
+		referraltypes.ModuleName,
 	)
 
 	// NOTE: The genutils module must occur after staking so that pools are
@@ -755,6 +773,9 @@ func NewApp(
 
 		// InitGenesis of crisis module called AssertInvariants
 		crisistypes.ModuleName,
+
+		// referral
+		referraltypes.ModuleName,
 	)
 
 	app.mm.RegisterInvariants(&app.CrisisKeeper)
@@ -790,6 +811,7 @@ func NewApp(
 		marketmaker.NewAppModule(appCodec, app.MarketMakerKeeper, app.AccountKeeper, app.BankKeeper),
 		lpfarm.NewAppModule(appCodec, app.LPFarmKeeper, app.AccountKeeper, app.BankKeeper, app.LiquidityKeeper),
 		marker.NewAppModule(appCodec, app.MarkerKeeper),
+		referral.NewAppModule(appCodec, app.ReferralKeeper, app.AccountKeeper, app.BankKeeper),
 		ibc.NewAppModule(app.IBCKeeper),
 		app.transferModule,
 	)
@@ -999,6 +1021,7 @@ func initParamsKeeper(appCodec codec.BinaryCodec, legacyAmino *codec.LegacyAmino
 	paramsKeeper.Subspace(marketmakertypes.ModuleName)
 	paramsKeeper.Subspace(lpfarmtypes.ModuleName)
 	paramsKeeper.Subspace(markertypes.ModuleName)
+	paramsKeeper.Subspace(referraltypes.ModuleName)
 	paramsKeeper.Subspace(icahosttypes.SubModuleName)
 
 	return paramsKeeper
