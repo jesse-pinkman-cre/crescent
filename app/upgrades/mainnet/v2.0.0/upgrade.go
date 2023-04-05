@@ -8,10 +8,10 @@ import (
 	budgetkeeper "github.com/tendermint/budget/x/budget/keeper"
 	budgettypes "github.com/tendermint/budget/x/budget/types"
 
-	utils "github.com/crescent-network/crescent/v5/types"
-	liquiditykeeper "github.com/crescent-network/crescent/v5/x/liquidity/keeper"
-	mintkeeper "github.com/crescent-network/crescent/v5/x/mint/keeper"
-	minttypes "github.com/crescent-network/crescent/v5/x/mint/types"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	liquiditykeeper "github.com/jesse-pinkman-cre/crescent/x/liquidity/keeper"
+	mintkeeper "github.com/jesse-pinkman-cre/crescent/x/mint/keeper"
+	minttypes "github.com/jesse-pinkman-cre/crescent/x/mint/types"
 )
 
 const UpgradeName = "v2.0.0"

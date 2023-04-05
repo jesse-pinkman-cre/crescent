@@ -5,9 +5,9 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/liquidity/keeper"
-	"github.com/crescent-network/crescent/v5/x/liquidity/types"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/keeper"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
 )
 
 func (s *KeeperTestSuite) TestDepositCoinsEscrowInvariant() {

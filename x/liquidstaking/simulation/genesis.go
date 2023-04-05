@@ -9,7 +9,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/crescent-network/crescent/v5/x/liquidstaking/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidstaking/types"
 )
 
 // DONTCOVER

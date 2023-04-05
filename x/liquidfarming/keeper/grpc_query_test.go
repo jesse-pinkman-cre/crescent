@@ -3,10 +3,10 @@ package keeper_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/types"
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
-	lpfarmtypes "github.com/crescent-network/crescent/v5/x/lpfarm/types"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/types"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
+	lpfarmtypes "github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
 
 	_ "github.com/stretchr/testify/suite"
 )

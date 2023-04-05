@@ -12,7 +12,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/flags"
 	"github.com/cosmos/cosmos-sdk/version"
 
-	"github.com/crescent-network/crescent/v5/x/lpfarm/types"
+	"github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
 )
 
 // GetQueryCmd returns the cli query commands for this module

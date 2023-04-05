@@ -6,8 +6,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/liquidity/types"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
 )
 
 func (s *KeeperTestSuite) TestSimulation1() {

@@ -5,8 +5,8 @@ import (
 	authtypes "github.com/cosmos/cosmos-sdk/x/auth/types"
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
-	liquidstakingtypes "github.com/crescent-network/crescent/v5/x/liquidstaking/types"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
+	liquidstakingtypes "github.com/jesse-pinkman-cre/crescent/x/liquidstaking/types"
 )
 
 // AccountKeeper is the expected x/auth module keeper.

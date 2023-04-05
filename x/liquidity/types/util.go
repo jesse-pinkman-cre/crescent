@@ -7,7 +7,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	banktypes "github.com/cosmos/cosmos-sdk/x/bank/types"
 
-	"github.com/crescent-network/crescent/v5/x/liquidity/amm"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/amm"
 )
 
 type sendCoinsTxKey struct {

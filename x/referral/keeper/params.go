@@ -15,3 +15,14 @@ func (k Keeper) GetParams(ctx sdk.Context) (params types.Params) {
 func (k Keeper) SetParams(ctx sdk.Context, params types.Params) {
 	k.paramSpace.SetParamSet(ctx, &params)
 }
+
+// GetMaxParentDepth returns the maximum parent depth for bonus distribution parameter.
+func (k Keeper) GetMaxParentDepth(ctx sdk.Context) (maxParentDepth sdk.Int) {
+	k.paramSpace.Get(ctx, types.KeyMaxParentDepth, &maxParentDepth)
+	return
+}
+
+// SetMaxParentDepth sets the maximum parent depth for bonus distribution.
+func (k Keeper) SetMaxParentDepth(ctx sdk.Context, i sdk.Int) {
+	k.paramSpace.Set(ctx, types.KeyMaxParentDepth, i)
+}

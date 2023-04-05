@@ -4,8 +4,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/crescent-network/crescent/v5/x/liquidity/keeper"
-	"github.com/crescent-network/crescent/v5/x/liquidity/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/keeper"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
 )
 
 // NewHandler returns a new msg handler.

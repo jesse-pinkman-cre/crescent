@@ -11,7 +11,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/version"
 
-	"github.com/crescent-network/crescent/v5/x/liquidstaking/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidstaking/types"
 )
 
 // GetQueryCmd returns a root CLI command handler for all x/liquidstaking query commands.

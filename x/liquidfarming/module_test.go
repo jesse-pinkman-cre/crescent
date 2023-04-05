@@ -11,10 +11,10 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	chain "github.com/crescent-network/crescent/v5/app"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/keeper"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/types"
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
+	chain "github.com/jesse-pinkman-cre/crescent/app"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/keeper"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/types"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
 
 	_ "github.com/stretchr/testify/suite"
 )

@@ -12,7 +12,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/crescent-network/crescent/v5/x/farming/types"
+	"github.com/jesse-pinkman-cre/crescent/x/farming/types"
 )
 
 type msgServer struct {

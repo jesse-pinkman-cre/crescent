@@ -5,7 +5,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/crescent-network/crescent/v5/x/lpfarm/types"
+	"github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
 )
 
 var _ types.MsgServer = msgServer{}

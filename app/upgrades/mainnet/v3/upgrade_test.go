@@ -10,17 +10,17 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	chain "github.com/crescent-network/crescent/v5/app"
-	v3 "github.com/crescent-network/crescent/v5/app/upgrades/mainnet/v3"
-	"github.com/crescent-network/crescent/v5/cmd/crescentd/cmd"
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/farming"
-	farmingkeeper "github.com/crescent-network/crescent/v5/x/farming/keeper"
-	farmingtypes "github.com/crescent-network/crescent/v5/x/farming/types"
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
-	"github.com/crescent-network/crescent/v5/x/lpfarm"
-	lpfarmtypes "github.com/crescent-network/crescent/v5/x/lpfarm/types"
-	marketmakertypes "github.com/crescent-network/crescent/v5/x/marketmaker/types"
+	chain "github.com/jesse-pinkman-cre/crescent/app"
+	v3 "github.com/jesse-pinkman-cre/crescent/app/upgrades/mainnet/v3"
+	"github.com/jesse-pinkman-cre/crescent/cmd/crescentd/cmd"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/farming"
+	farmingkeeper "github.com/jesse-pinkman-cre/crescent/x/farming/keeper"
+	farmingtypes "github.com/jesse-pinkman-cre/crescent/x/farming/types"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
+	"github.com/jesse-pinkman-cre/crescent/x/lpfarm"
+	lpfarmtypes "github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
+	marketmakertypes "github.com/jesse-pinkman-cre/crescent/x/marketmaker/types"
 )
 
 type UpgradeTestSuite struct {

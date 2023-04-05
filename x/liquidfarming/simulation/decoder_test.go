@@ -9,8 +9,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/simapp"
 	"github.com/cosmos/cosmos-sdk/types/kv"
 
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/simulation"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/simulation"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/types"
 )
 
 func TestDecodeFarmingStore(t *testing.T) {

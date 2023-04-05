@@ -3,10 +3,10 @@ package keeper_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/farming"
-	farmingkeeper "github.com/crescent-network/crescent/v5/x/farming/keeper"
-	"github.com/crescent-network/crescent/v5/x/farming/types"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/farming"
+	farmingkeeper "github.com/jesse-pinkman-cre/crescent/x/farming/keeper"
+	"github.com/jesse-pinkman-cre/crescent/x/farming/types"
 )
 
 func (suite *KeeperTestSuite) TestPositiveStakingAmountInvariant() {

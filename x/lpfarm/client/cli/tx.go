@@ -16,7 +16,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/version"
 
-	"github.com/crescent-network/crescent/v5/x/lpfarm/types"
+	"github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
 )
 
 // GetTxCmd returns the transaction commands for the module

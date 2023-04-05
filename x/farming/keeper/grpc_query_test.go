@@ -3,9 +3,9 @@ package keeper_test
 import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/farming"
-	"github.com/crescent-network/crescent/v5/x/farming/types"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/farming"
+	"github.com/jesse-pinkman-cre/crescent/x/farming/types"
 )
 
 func (suite *KeeperTestSuite) TestGRPCParams() {

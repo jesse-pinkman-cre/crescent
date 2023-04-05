@@ -7,10 +7,10 @@ import (
 	govtypes "github.com/cosmos/cosmos-sdk/x/gov/types"
 	stakingtypes "github.com/cosmos/cosmos-sdk/x/staking/types"
 
-	chain "github.com/crescent-network/crescent/v5/app"
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/liquidstaking/types"
-	lpfarmtypes "github.com/crescent-network/crescent/v5/x/lpfarm/types"
+	chain "github.com/jesse-pinkman-cre/crescent/app"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidstaking/types"
+	lpfarmtypes "github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
 )
 
 // test Liquid Staking gov power

@@ -26,6 +26,6 @@ Mgoogle/protobuf/any.proto=github.com/cosmos/cosmos-sdk/codec/types:. \
 done
 
 # move proto files to the right places
-cp -r github.com/crescent-network/crescent/v5/* ./
+cp -r github.com/jesse-pinkman-cre/crescent/* ./
 cp -r github.com/jesse-pinkman-cre/crescent/* ./
 rm -rf github.com

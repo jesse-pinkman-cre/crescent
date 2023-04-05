@@ -7,4 +7,22 @@ option go_package = "github.com/jesse-pinkman-cre/crescent/x/referral/types";
 
 message Params {
   option (gogoproto.goproto_stringer) = false;
+
+  // uint32 max_parent_depth = 1;
+  string max_parent_depth = 1
+      [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (gogoproto.nullable) = false];
+
+  string swap_fee_rate = 2
+      [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (gogoproto.nullable) = false];
+
+  string swap_fee_referral_rate = 3
+      [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (gogoproto.nullable) = false];
+
+  string swap_fee_parent_rate = 4
+      [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Dec", (gogoproto.nullable) = false];
+
+  string min_num_child_for_tier_silver = 5
+      [(gogoproto.customtype) = "github.com/cosmos/cosmos-sdk/types.Int", (gogoproto.nullable) = false];
+
+  string fee_collector_address = 6;
 }

@@ -9,7 +9,7 @@ import (
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 
-	"github.com/crescent-network/crescent/v5/types"
+	"github.com/jesse-pinkman-cre/crescent/types"
 )
 
 func TestGetShareValue(t *testing.T) {
