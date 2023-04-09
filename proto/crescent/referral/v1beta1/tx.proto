@@ -1,6 +1,20 @@
 syntax = "proto3";
 package crescent.referral.v1beta1;
 
+import "gogoproto/gogo.proto";
+import "crescent/referral/v1beta1/referral.proto";
+
 option go_package = "github.com/jesse-pinkman-cre/crescent/x/referral/types";
 
-service Msg {}
+service Msg {
+  rpc AddReferral(MsgAddReferral) returns (MsgAddReferralResponse);
+}
+
+message MsgAddReferral {
+  string sender = 1;
+  string code   = 2;
+}
+
+message MsgAddReferralResponse {
+  Referral referral = 1 [(gogoproto.nullable) = false];
+}
