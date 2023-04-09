@@ -1,9 +1,11 @@
 syntax = "proto3";
 package crescent.referral.v1beta1;
 
+import "crescent/referral/v1beta1/referral.proto";
 import "crescent/referral/v1beta1/params.proto";
 import "gogoproto/gogo.proto";
 import "google/api/annotations.proto";
+import "cosmos/base/query/v1beta1/pagination.proto";
 
 option go_package                      = "github.com/jesse-pinkman-cre/crescent/x/referral/types";
 option (gogoproto.goproto_getters_all) = false;
@@ -12,10 +14,47 @@ service Query {
   rpc Params(QueryParamsRequest) returns (QueryParamsResponse) {
     option (google.api.http).get = "/crescent/referral/v1beta1/params";
   }
+  rpc Referrals(QueryReferralsRequest) returns (QueryReferralsResponse) {
+    option (google.api.http).get = "/crescent/referral/v1beta1/referrals";
+  }
+  rpc Referral(QueryReferralRequest) returns (QueryReferralResponse) {
+    option (google.api.http).get = "/crescent/referral/v1beta1/referral/{id}";
+  }
+  rpc ReferralByAddr(QueryReferralByAddrRequest) returns (QueryReferralResponse) {
+    option (google.api.http).get = "/crescent/referral/v1beta1/referral/addr/{addr}";
+  }
+  rpc ReferralByCode(QueryReferralByCodeRequest) returns (QueryReferralResponse) {
+    option (google.api.http).get = "/crescent/referral/v1beta1/referral/code/{code}";
+  }
 }
 
 message QueryParamsRequest {}
 
 message QueryParamsResponse {
   Params params = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryReferralsRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryReferralsResponse {
+  repeated Referral                      referrals  = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
+}
+
+message QueryReferralRequest {
+  uint64 id = 1;
+}
+
+message QueryReferralResponse {
+  Referral referral = 1 [(gogoproto.nullable) = false];
+}
+
+message QueryReferralByAddrRequest {
+  string addr = 1;
+}
+
+message QueryReferralByCodeRequest {
+  string code = 1;
 }

@@ -6,6 +6,7 @@ package types
 import (
 	context "context"
 	fmt "fmt"
+	query "github.com/cosmos/cosmos-sdk/types/query"
 	_ "github.com/gogo/protobuf/gogoproto"
 	grpc1 "github.com/gogo/protobuf/grpc"
 	proto "github.com/gogo/protobuf/proto"
@@ -102,9 +103,238 @@ func (m *QueryParamsResponse) XXX_DiscardUnknown() {
 
 var xxx_messageInfo_QueryParamsResponse proto.InternalMessageInfo
 
+type QueryReferralsRequest struct {
+	Pagination *query.PageRequest `protobuf:"bytes,1,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryReferralsRequest) Reset()         { *m = QueryReferralsRequest{} }
+func (m *QueryReferralsRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryReferralsRequest) ProtoMessage()    {}
+func (*QueryReferralsRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2fd7bc392baf30ed, []int{2}
+}
+func (m *QueryReferralsRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryReferralsRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryReferralsRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryReferralsRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryReferralsRequest.Merge(m, src)
+}
+func (m *QueryReferralsRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryReferralsRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryReferralsRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryReferralsRequest proto.InternalMessageInfo
+
+type QueryReferralsResponse struct {
+	Referrals  []Referral          `protobuf:"bytes,1,rep,name=referrals,proto3" json:"referrals"`
+	Pagination *query.PageResponse `protobuf:"bytes,2,opt,name=pagination,proto3" json:"pagination,omitempty"`
+}
+
+func (m *QueryReferralsResponse) Reset()         { *m = QueryReferralsResponse{} }
+func (m *QueryReferralsResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryReferralsResponse) ProtoMessage()    {}
+func (*QueryReferralsResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2fd7bc392baf30ed, []int{3}
+}
+func (m *QueryReferralsResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryReferralsResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryReferralsResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryReferralsResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryReferralsResponse.Merge(m, src)
+}
+func (m *QueryReferralsResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryReferralsResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryReferralsResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryReferralsResponse proto.InternalMessageInfo
+
+type QueryReferralRequest struct {
+	Id uint64 `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (m *QueryReferralRequest) Reset()         { *m = QueryReferralRequest{} }
+func (m *QueryReferralRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryReferralRequest) ProtoMessage()    {}
+func (*QueryReferralRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2fd7bc392baf30ed, []int{4}
+}
+func (m *QueryReferralRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryReferralRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryReferralRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryReferralRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryReferralRequest.Merge(m, src)
+}
+func (m *QueryReferralRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryReferralRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryReferralRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryReferralRequest proto.InternalMessageInfo
+
+type QueryReferralResponse struct {
+	Referral Referral `protobuf:"bytes,1,opt,name=referral,proto3" json:"referral"`
+}
+
+func (m *QueryReferralResponse) Reset()         { *m = QueryReferralResponse{} }
+func (m *QueryReferralResponse) String() string { return proto.CompactTextString(m) }
+func (*QueryReferralResponse) ProtoMessage()    {}
+func (*QueryReferralResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2fd7bc392baf30ed, []int{5}
+}
+func (m *QueryReferralResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryReferralResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryReferralResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryReferralResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryReferralResponse.Merge(m, src)
+}
+func (m *QueryReferralResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryReferralResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryReferralResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryReferralResponse proto.InternalMessageInfo
+
+type QueryReferralByAddrRequest struct {
+	Addr string `protobuf:"bytes,1,opt,name=addr,proto3" json:"addr,omitempty"`
+}
+
+func (m *QueryReferralByAddrRequest) Reset()         { *m = QueryReferralByAddrRequest{} }
+func (m *QueryReferralByAddrRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryReferralByAddrRequest) ProtoMessage()    {}
+func (*QueryReferralByAddrRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2fd7bc392baf30ed, []int{6}
+}
+func (m *QueryReferralByAddrRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryReferralByAddrRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryReferralByAddrRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryReferralByAddrRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryReferralByAddrRequest.Merge(m, src)
+}
+func (m *QueryReferralByAddrRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryReferralByAddrRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryReferralByAddrRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryReferralByAddrRequest proto.InternalMessageInfo
+
+type QueryReferralByCodeRequest struct {
+	Code string `protobuf:"bytes,1,opt,name=code,proto3" json:"code,omitempty"`
+}
+
+func (m *QueryReferralByCodeRequest) Reset()         { *m = QueryReferralByCodeRequest{} }
+func (m *QueryReferralByCodeRequest) String() string { return proto.CompactTextString(m) }
+func (*QueryReferralByCodeRequest) ProtoMessage()    {}
+func (*QueryReferralByCodeRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_2fd7bc392baf30ed, []int{7}
+}
+func (m *QueryReferralByCodeRequest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *QueryReferralByCodeRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_QueryReferralByCodeRequest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *QueryReferralByCodeRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_QueryReferralByCodeRequest.Merge(m, src)
+}
+func (m *QueryReferralByCodeRequest) XXX_Size() int {
+	return m.Size()
+}
+func (m *QueryReferralByCodeRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_QueryReferralByCodeRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_QueryReferralByCodeRequest proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*QueryParamsRequest)(nil), "crescent.referral.v1beta1.QueryParamsRequest")
 	proto.RegisterType((*QueryParamsResponse)(nil), "crescent.referral.v1beta1.QueryParamsResponse")
+	proto.RegisterType((*QueryReferralsRequest)(nil), "crescent.referral.v1beta1.QueryReferralsRequest")
+	proto.RegisterType((*QueryReferralsResponse)(nil), "crescent.referral.v1beta1.QueryReferralsResponse")
+	proto.RegisterType((*QueryReferralRequest)(nil), "crescent.referral.v1beta1.QueryReferralRequest")
+	proto.RegisterType((*QueryReferralResponse)(nil), "crescent.referral.v1beta1.QueryReferralResponse")
+	proto.RegisterType((*QueryReferralByAddrRequest)(nil), "crescent.referral.v1beta1.QueryReferralByAddrRequest")
+	proto.RegisterType((*QueryReferralByCodeRequest)(nil), "crescent.referral.v1beta1.QueryReferralByCodeRequest")
 }
 
 func init() {
@@ -112,26 +342,45 @@ func init() {
 }
 
 var fileDescriptor_2fd7bc392baf30ed = []byte{
-	// 300 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x8c, 0x90, 0x31, 0x4b, 0xc3, 0x40,
-	0x14, 0xc7, 0x73, 0xa2, 0x1d, 0xce, 0xed, 0xec, 0xa0, 0x45, 0x4e, 0x5b, 0x51, 0x74, 0xc8, 0x1d,
-	0xad, 0xe0, 0x2a, 0xf4, 0x13, 0x68, 0x11, 0x07, 0xb7, 0x4b, 0x78, 0xc6, 0x68, 0x73, 0x77, 0xbd,
-	0xbb, 0x88, 0x5d, 0xfd, 0x04, 0xa2, 0xab, 0x1f, 0x28, 0x63, 0xc1, 0xc5, 0x49, 0x34, 0xf1, 0x83,
-	0x48, 0x93, 0x94, 0x22, 0x52, 0x75, 0x7b, 0x3c, 0x7e, 0xff, 0xdf, 0xfb, 0xf3, 0xf0, 0x6e, 0x68,
-	0xc0, 0x86, 0x20, 0x1d, 0x37, 0x70, 0x09, 0xc6, 0x88, 0x21, 0xbf, 0xed, 0x06, 0xe0, 0x44, 0x97,
-	0x8f, 0x52, 0x30, 0x63, 0xa6, 0x8d, 0x72, 0x8a, 0x6c, 0xcc, 0x30, 0x36, 0xc3, 0x58, 0x8d, 0xb5,
-	0xf6, 0x16, 0x1b, 0xb4, 0x30, 0x22, 0xb1, 0x95, 0xa2, 0xd5, 0x8c, 0x54, 0xa4, 0xca, 0x91, 0x4f,
-	0xa7, 0x7a, 0xbb, 0x19, 0x29, 0x15, 0x0d, 0x81, 0x0b, 0x1d, 0x73, 0x21, 0xa5, 0x72, 0xc2, 0xc5,
-	0x4a, 0xd6, 0x99, 0x4e, 0x13, 0x93, 0xd3, 0x69, 0x8b, 0x93, 0x52, 0x34, 0x80, 0x51, 0x0a, 0xd6,
-	0x75, 0xce, 0xf1, 0xda, 0xb7, 0xad, 0xd5, 0x4a, 0x5a, 0x20, 0xc7, 0xb8, 0x51, 0x1d, 0x5c, 0x47,
-	0xdb, 0x68, 0x7f, 0xb5, 0xd7, 0x66, 0x0b, 0x4b, 0xb3, 0x2a, 0xda, 0x5f, 0xce, 0xde, 0xb6, 0xbc,
-	0x41, 0x1d, 0xeb, 0x3d, 0x23, 0xbc, 0x52, 0x8a, 0xc9, 0x23, 0xc2, 0x8d, 0x0a, 0x21, 0xfe, 0x2f,
-	0x96, 0x9f, 0xdd, 0x5a, 0xec, 0xbf, 0x78, 0x55, 0xba, 0x73, 0x70, 0xff, 0xf2, 0xf9, 0xb4, 0xb4,
-	0x43, 0xda, 0xfc, 0xaf, 0x37, 0xf6, 0xcf, 0xb2, 0x0f, 0xea, 0x65, 0x39, 0x45, 0x93, 0x9c, 0xa2,
-	0xf7, 0x9c, 0xa2, 0x87, 0x82, 0x7a, 0x93, 0x82, 0x7a, 0xaf, 0x05, 0xf5, 0x2e, 0x8e, 0xa2, 0xd8,
-	0x5d, 0xa5, 0x01, 0x0b, 0x55, 0xc2, 0xaf, 0xc1, 0x5a, 0xf0, 0x75, 0x2c, 0x6f, 0x12, 0x21, 0xfd,
-	0xd0, 0xc0, 0x5c, 0x7e, 0x37, 0xd7, 0xbb, 0xb1, 0x06, 0x1b, 0x34, 0xca, 0x4f, 0x1f, 0x7e, 0x05,
-	0x00, 0x00, 0xff, 0xff, 0xe1, 0x09, 0x23, 0xc3, 0x09, 0x02, 0x00, 0x00,
+	// 595 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xb4, 0x95, 0x41, 0x8f, 0xd2, 0x4e,
+	0x18, 0xc6, 0x29, 0x7f, 0xfe, 0x64, 0x99, 0x4d, 0xf6, 0x30, 0xa2, 0x51, 0x62, 0xaa, 0xdb, 0x55,
+	0xc4, 0x8d, 0x74, 0x00, 0xa3, 0x1e, 0x8d, 0x18, 0xdd, 0xab, 0x36, 0xc6, 0x83, 0x07, 0xcd, 0xd0,
+	0x8e, 0xb5, 0xba, 0x74, 0xba, 0x33, 0xc5, 0x48, 0xc8, 0x5e, 0xfc, 0x04, 0x46, 0xef, 0x7a, 0xf7,
+	0xe8, 0xa7, 0xc0, 0xdb, 0x26, 0x5e, 0x3c, 0x19, 0x05, 0x3f, 0x88, 0x99, 0xe9, 0x0c, 0xa5, 0x28,
+	0x4b, 0x31, 0xf1, 0xd2, 0x4c, 0x9a, 0xe7, 0x79, 0xde, 0xdf, 0xfb, 0xf2, 0x0e, 0x05, 0x17, 0x5d,
+	0x46, 0xb8, 0x4b, 0xc2, 0x18, 0x31, 0xf2, 0x94, 0x30, 0x86, 0xf7, 0xd1, 0xcb, 0x76, 0x8f, 0xc4,
+	0xb8, 0x8d, 0x0e, 0x06, 0x84, 0x0d, 0xed, 0x88, 0xd1, 0x98, 0xc2, 0x33, 0x5a, 0x66, 0x6b, 0x99,
+	0xad, 0x64, 0xb5, 0xc6, 0xf2, 0x84, 0x99, 0x56, 0x86, 0xd4, 0xea, 0xcb, 0x95, 0x11, 0x66, 0xb8,
+	0xcf, 0x95, 0xae, 0xea, 0x53, 0x9f, 0xca, 0x23, 0x12, 0x27, 0xf5, 0xf6, 0xac, 0x4f, 0xa9, 0xbf,
+	0x4f, 0x10, 0x8e, 0x02, 0x84, 0xc3, 0x90, 0xc6, 0x38, 0x0e, 0x68, 0xa8, 0x3d, 0xbb, 0x2e, 0xe5,
+	0x7d, 0xca, 0x51, 0x0f, 0x73, 0x92, 0x90, 0xcf, 0x65, 0xfb, 0x41, 0x28, 0xc5, 0x89, 0xd6, 0xaa,
+	0x02, 0x78, 0x5f, 0x28, 0xee, 0xc9, 0xa2, 0x0e, 0x39, 0x18, 0x10, 0x1e, 0x5b, 0x0f, 0xc1, 0x89,
+	0xcc, 0x5b, 0x1e, 0xd1, 0x90, 0x13, 0x78, 0x13, 0x94, 0x13, 0xb8, 0xd3, 0xc6, 0x79, 0xa3, 0xb1,
+	0xd9, 0xd9, 0xb6, 0x97, 0x8e, 0xc2, 0x4e, 0xac, 0xdd, 0xd2, 0xf8, 0xdb, 0xb9, 0x82, 0xa3, 0x6c,
+	0xd6, 0x13, 0x70, 0x52, 0xe6, 0x3a, 0x4a, 0xad, 0x0b, 0xc2, 0xbb, 0x00, 0xa4, 0x68, 0x2a, 0xbd,
+	0x6e, 0x27, 0x7d, 0xd8, 0xa2, 0x0f, 0x3b, 0xf9, 0x05, 0xd2, 0x74, 0x9f, 0x28, 0xaf, 0x33, 0xe7,
+	0xb4, 0x3e, 0x1a, 0xe0, 0xd4, 0x62, 0x05, 0x05, 0xbf, 0x07, 0x2a, 0x1a, 0x52, 0xf0, 0xff, 0xd7,
+	0xd8, 0xec, 0xec, 0x1c, 0xc3, 0xaf, 0x03, 0x54, 0x07, 0xa9, 0x17, 0xee, 0x65, 0x58, 0x8b, 0x92,
+	0xf5, 0xd2, 0x4a, 0xd6, 0x84, 0x22, 0x03, 0x5b, 0x07, 0xd5, 0x0c, 0xab, 0x1e, 0xc6, 0x16, 0x28,
+	0x06, 0x9e, 0x1c, 0x42, 0xc9, 0x29, 0x06, 0x9e, 0xf5, 0x78, 0x61, 0x6a, 0xb3, 0x96, 0xee, 0x80,
+	0x0d, 0x8d, 0xa5, 0x66, 0xb6, 0x46, 0x47, 0x33, 0xab, 0xd5, 0x02, 0xb5, 0x4c, 0x7e, 0x77, 0x78,
+	0xcb, 0xf3, 0x98, 0xa6, 0x81, 0xa0, 0x84, 0x3d, 0x8f, 0xc9, 0x02, 0x15, 0x47, 0x9e, 0xff, 0xe0,
+	0xb8, 0x4d, 0x3d, 0x32, 0xe7, 0x70, 0xa9, 0x47, 0xb4, 0x43, 0x9c, 0x3b, 0x9f, 0xcb, 0xe0, 0x7f,
+	0x69, 0x81, 0x6f, 0x0d, 0x50, 0x4e, 0x96, 0x03, 0x36, 0x8f, 0xa1, 0xfd, 0x7d, 0x2b, 0x6b, 0x76,
+	0x5e, 0x79, 0x32, 0x1e, 0xeb, 0xf2, 0xeb, 0x2f, 0x3f, 0xdf, 0x15, 0x77, 0xe0, 0x36, 0x5a, 0x75,
+	0xd9, 0xe0, 0x7b, 0x03, 0x54, 0x66, 0x2b, 0x03, 0x5b, 0xab, 0x0a, 0x2d, 0xee, 0x6f, 0xad, 0xbd,
+	0x86, 0x43, 0xd1, 0x5d, 0x91, 0x74, 0x75, 0x78, 0x01, 0xad, 0xfe, 0xd3, 0xe0, 0xf0, 0x83, 0x01,
+	0x36, 0x74, 0x06, 0x44, 0x79, 0xab, 0x69, 0xbc, 0x56, 0x7e, 0x83, 0xa2, 0x6b, 0x49, 0xba, 0x5d,
+	0xd8, 0xc8, 0x41, 0x87, 0x46, 0x81, 0x77, 0x08, 0x3f, 0x19, 0x60, 0x2b, 0xbb, 0x41, 0xf0, 0x5a,
+	0xde, 0xb2, 0x99, 0x8d, 0xfb, 0x0b, 0xda, 0x1b, 0x92, 0xb6, 0x0d, 0x51, 0x1e, 0x5a, 0xb1, 0xc1,
+	0x68, 0x24, 0x9e, 0x8b, 0xd0, 0x62, 0x89, 0xd7, 0x81, 0x9e, 0x5b, 0xfa, 0x7f, 0x0d, 0x2d, 0x2e,
+	0x11, 0x1a, 0x89, 0xe7, 0x61, 0xf7, 0xc1, 0xf8, 0x87, 0x59, 0x18, 0x4f, 0x4c, 0xe3, 0x68, 0x62,
+	0x1a, 0xdf, 0x27, 0xa6, 0xf1, 0x66, 0x6a, 0x16, 0x8e, 0xa6, 0x66, 0xe1, 0xeb, 0xd4, 0x2c, 0x3c,
+	0xba, 0xee, 0x07, 0xf1, 0xb3, 0x41, 0xcf, 0x76, 0x69, 0x1f, 0x3d, 0x27, 0x9c, 0x93, 0x66, 0x14,
+	0x84, 0x2f, 0xfa, 0x38, 0x6c, 0xba, 0x8c, 0xa4, 0xa5, 0x5e, 0xa5, 0xd9, 0xf1, 0x30, 0x22, 0xbc,
+	0x57, 0x96, 0x1f, 0x84, 0xab, 0xbf, 0x02, 0x00, 0x00, 0xff, 0xff, 0x24, 0xa0, 0x3c, 0x9d, 0x06,
+	0x07, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -147,6 +396,10 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type QueryClient interface {
 	Params(ctx context.Context, in *QueryParamsRequest, opts ...grpc.CallOption) (*QueryParamsResponse, error)
+	Referrals(ctx context.Context, in *QueryReferralsRequest, opts ...grpc.CallOption) (*QueryReferralsResponse, error)
+	Referral(ctx context.Context, in *QueryReferralRequest, opts ...grpc.CallOption) (*QueryReferralResponse, error)
+	ReferralByAddr(ctx context.Context, in *QueryReferralByAddrRequest, opts ...grpc.CallOption) (*QueryReferralResponse, error)
+	ReferralByCode(ctx context.Context, in *QueryReferralByCodeRequest, opts ...grpc.CallOption) (*QueryReferralResponse, error)
 }
 
 type queryClient struct {
@@ -166,9 +419,49 @@ func (c *queryClient) Params(ctx context.Context, in *QueryParamsRequest, opts .
 	return out, nil
 }
 
+func (c *queryClient) Referrals(ctx context.Context, in *QueryReferralsRequest, opts ...grpc.CallOption) (*QueryReferralsResponse, error) {
+	out := new(QueryReferralsResponse)
+	err := c.cc.Invoke(ctx, "/crescent.referral.v1beta1.Query/Referrals", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) Referral(ctx context.Context, in *QueryReferralRequest, opts ...grpc.CallOption) (*QueryReferralResponse, error) {
+	out := new(QueryReferralResponse)
+	err := c.cc.Invoke(ctx, "/crescent.referral.v1beta1.Query/Referral", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) ReferralByAddr(ctx context.Context, in *QueryReferralByAddrRequest, opts ...grpc.CallOption) (*QueryReferralResponse, error) {
+	out := new(QueryReferralResponse)
+	err := c.cc.Invoke(ctx, "/crescent.referral.v1beta1.Query/ReferralByAddr", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *queryClient) ReferralByCode(ctx context.Context, in *QueryReferralByCodeRequest, opts ...grpc.CallOption) (*QueryReferralResponse, error) {
+	out := new(QueryReferralResponse)
+	err := c.cc.Invoke(ctx, "/crescent.referral.v1beta1.Query/ReferralByCode", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // QueryServer is the server API for Query service.
 type QueryServer interface {
 	Params(context.Context, *QueryParamsRequest) (*QueryParamsResponse, error)
+	Referrals(context.Context, *QueryReferralsRequest) (*QueryReferralsResponse, error)
+	Referral(context.Context, *QueryReferralRequest) (*QueryReferralResponse, error)
+	ReferralByAddr(context.Context, *QueryReferralByAddrRequest) (*QueryReferralResponse, error)
+	ReferralByCode(context.Context, *QueryReferralByCodeRequest) (*QueryReferralResponse, error)
 }
 
 // UnimplementedQueryServer can be embedded to have forward compatible implementations.
@@ -177,6 +470,18 @@ type UnimplementedQueryServer struct {
 
 func (*UnimplementedQueryServer) Params(ctx context.Context, req *QueryParamsRequest) (*QueryParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Params not implemented")
+}
+func (*UnimplementedQueryServer) Referrals(ctx context.Context, req *QueryReferralsRequest) (*QueryReferralsResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Referrals not implemented")
+}
+func (*UnimplementedQueryServer) Referral(ctx context.Context, req *QueryReferralRequest) (*QueryReferralResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Referral not implemented")
+}
+func (*UnimplementedQueryServer) ReferralByAddr(ctx context.Context, req *QueryReferralByAddrRequest) (*QueryReferralResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReferralByAddr not implemented")
+}
+func (*UnimplementedQueryServer) ReferralByCode(ctx context.Context, req *QueryReferralByCodeRequest) (*QueryReferralResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReferralByCode not implemented")
 }
 
 func RegisterQueryServer(s grpc1.Server, srv QueryServer) {
@@ -201,6 +506,78 @@ func _Query_Params_Handler(srv interface{}, ctx context.Context, dec func(interf
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Query_Referrals_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryReferralsRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Referrals(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crescent.referral.v1beta1.Query/Referrals",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Referrals(ctx, req.(*QueryReferralsRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_Referral_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryReferralRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).Referral(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crescent.referral.v1beta1.Query/Referral",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).Referral(ctx, req.(*QueryReferralRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_ReferralByAddr_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryReferralByAddrRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).ReferralByAddr(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crescent.referral.v1beta1.Query/ReferralByAddr",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).ReferralByAddr(ctx, req.(*QueryReferralByAddrRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Query_ReferralByCode_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(QueryReferralByCodeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(QueryServer).ReferralByCode(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/crescent.referral.v1beta1.Query/ReferralByCode",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(QueryServer).ReferralByCode(ctx, req.(*QueryReferralByCodeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Query_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "crescent.referral.v1beta1.Query",
 	HandlerType: (*QueryServer)(nil),
@@ -208,6 +585,22 @@ var _Query_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "Params",
 			Handler:    _Query_Params_Handler,
+		},
+		{
+			MethodName: "Referrals",
+			Handler:    _Query_Referrals_Handler,
+		},
+		{
+			MethodName: "Referral",
+			Handler:    _Query_Referral_Handler,
+		},
+		{
+			MethodName: "ReferralByAddr",
+			Handler:    _Query_ReferralByAddr_Handler,
+		},
+		{
+			MethodName: "ReferralByCode",
+			Handler:    _Query_ReferralByCode_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -270,6 +663,211 @@ func (m *QueryParamsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 	return len(dAtA) - i, nil
 }
 
+func (m *QueryReferralsRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryReferralsRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryReferralsRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryReferralsResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryReferralsResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryReferralsResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		{
+			size, err := m.Pagination.MarshalToSizedBuffer(dAtA[:i])
+			if err != nil {
+				return 0, err
+			}
+			i -= size
+			i = encodeVarintQuery(dAtA, i, uint64(size))
+		}
+		i--
+		dAtA[i] = 0x12
+	}
+	if len(m.Referrals) > 0 {
+		for iNdEx := len(m.Referrals) - 1; iNdEx >= 0; iNdEx-- {
+			{
+				size, err := m.Referrals[iNdEx].MarshalToSizedBuffer(dAtA[:i])
+				if err != nil {
+					return 0, err
+				}
+				i -= size
+				i = encodeVarintQuery(dAtA, i, uint64(size))
+			}
+			i--
+			dAtA[i] = 0xa
+		}
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryReferralRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryReferralRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryReferralRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Id != 0 {
+		i = encodeVarintQuery(dAtA, i, uint64(m.Id))
+		i--
+		dAtA[i] = 0x8
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryReferralResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryReferralResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryReferralResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	{
+		size, err := m.Referral.MarshalToSizedBuffer(dAtA[:i])
+		if err != nil {
+			return 0, err
+		}
+		i -= size
+		i = encodeVarintQuery(dAtA, i, uint64(size))
+	}
+	i--
+	dAtA[i] = 0xa
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryReferralByAddrRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryReferralByAddrRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryReferralByAddrRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Addr) > 0 {
+		i -= len(m.Addr)
+		copy(dAtA[i:], m.Addr)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Addr)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *QueryReferralByCodeRequest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *QueryReferralByCodeRequest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *QueryReferralByCodeRequest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if len(m.Code) > 0 {
+		i -= len(m.Code)
+		copy(dAtA[i:], m.Code)
+		i = encodeVarintQuery(dAtA, i, uint64(len(m.Code)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
 func encodeVarintQuery(dAtA []byte, offset int, v uint64) int {
 	offset -= sovQuery(v)
 	base := offset
@@ -298,6 +896,87 @@ func (m *QueryParamsResponse) Size() (n int) {
 	_ = l
 	l = m.Params.Size()
 	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryReferralsRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryReferralsResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if len(m.Referrals) > 0 {
+		for _, e := range m.Referrals {
+			l = e.Size()
+			n += 1 + l + sovQuery(uint64(l))
+		}
+	}
+	if m.Pagination != nil {
+		l = m.Pagination.Size()
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryReferralRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	if m.Id != 0 {
+		n += 1 + sovQuery(uint64(m.Id))
+	}
+	return n
+}
+
+func (m *QueryReferralResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = m.Referral.Size()
+	n += 1 + l + sovQuery(uint64(l))
+	return n
+}
+
+func (m *QueryReferralByAddrRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Addr)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
+	return n
+}
+
+func (m *QueryReferralByCodeRequest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Code)
+	if l > 0 {
+		n += 1 + l + sovQuery(uint64(l))
+	}
 	return n
 }
 
@@ -418,6 +1097,528 @@ func (m *QueryParamsResponse) Unmarshal(dAtA []byte) error {
 			if err := m.Params.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
 				return err
 			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryReferralsRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryReferralsRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryReferralsRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageRequest{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryReferralsResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryReferralsResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryReferralsResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Referrals", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Referrals = append(m.Referrals, Referral{})
+			if err := m.Referrals[len(m.Referrals)-1].Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		case 2:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Pagination", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if m.Pagination == nil {
+				m.Pagination = &query.PageResponse{}
+			}
+			if err := m.Pagination.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryReferralRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryReferralRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryReferralRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Id", wireType)
+			}
+			m.Id = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Id |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryReferralResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryReferralResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryReferralResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Referral", wireType)
+			}
+			var msglen int
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				msglen |= int(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			if msglen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + msglen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			if err := m.Referral.Unmarshal(dAtA[iNdEx:postIndex]); err != nil {
+				return err
+			}
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryReferralByAddrRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryReferralByAddrRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryReferralByAddrRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Addr", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Addr = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipQuery(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *QueryReferralByCodeRequest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowQuery
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: QueryReferralByCodeRequest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: QueryReferralByCodeRequest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Code", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowQuery
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthQuery
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthQuery
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Code = string(dAtA[iNdEx:postIndex])
 			iNdEx = postIndex
 		default:
 			iNdEx = preIndex
