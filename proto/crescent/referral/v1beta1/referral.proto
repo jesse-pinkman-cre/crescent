@@ -1,0 +1,15 @@
+syntax = "proto3";
+package crescent.referral.v1beta1;
+
+import "gogoproto/gogo.proto";
+
+option go_package                      = "github.com/jesse-pinkman-cre/crescent/x/referral/types";
+option (gogoproto.goproto_getters_all) = false;
+
+message Referral {
+  uint64 id     = 1;
+  string addr   = 2;
+  string code   = 3;
+  string parent = 4;
+  uint64 tier   = 5;
+}

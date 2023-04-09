@@ -84,7 +84,7 @@ func (params *Params) ParamSetPairs() paramstypes.ParamSetPairs {
 		paramstypes.NewParamSetPair(KeySwapFeeReferralRate, &params.SwapFeeReferralRate, validateSwapFeeReferralRate),
 		paramstypes.NewParamSetPair(KeySwapFeeParentRate, &params.SwapFeeParentRate, validateSwapFeeParentRate),
 		paramstypes.NewParamSetPair(KeyMinNumChildForTierSilver, &params.MinNumChildForTierSilver, validateMinNumChildForTierSilver),
-		//paramstypes.NewParamSetPair(KeyFeeCollectorAddress, &params.FeeCollectorAddress, validateFeeCollectorAddress),
+		paramstypes.NewParamSetPair(KeyFeeCollectorAddress, &params.FeeCollectorAddress, validateFeeCollectorAddress),
 	}
 }
 
