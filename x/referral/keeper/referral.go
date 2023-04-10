@@ -4,6 +4,7 @@ import (
 	"errors"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
+	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 	"github.com/jesse-pinkman-cre/crescent/x/referral/types"
 )
 
@@ -40,4 +41,27 @@ func (k Keeper) AddReferral(ctx sdk.Context, fromAddr sdk.AccAddress, code strin
 	// 	return
 	// }
 	return referral, nil
+}
+
+func (k Keeper) SetParent(ctx sdk.Context, fromAddr sdk.AccAddress, parent string) (referral types.Referral, err error) {
+	referral, found := k.GetReferralByAddr(ctx, fromAddr)
+	if !found { // Sanity check
+		err = sdkerrors.Wrapf(sdkerrors.ErrNotFound, "referral %s not found", fromAddr)
+		return
+	}
+	if len(referral.Parent) > 0 {
+		err = errors.New("parent already exists")
+		return
+	}
+	// check whether parent code exists
+	_, found = k.GetReferralByCode(ctx, parent)
+	if !found { // Sanity check
+		err = sdkerrors.Wrapf(sdkerrors.ErrNotFound, "parent code %s not found", parent)
+		return
+	}
+
+	referral.Parent = parent
+	k.SetReferral(ctx, referral)
+	return referral, nil
+
 }

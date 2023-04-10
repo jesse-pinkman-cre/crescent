@@ -8,6 +8,7 @@ option go_package = "github.com/jesse-pinkman-cre/crescent/x/referral/types";
 
 service Msg {
   rpc AddReferral(MsgAddReferral) returns (MsgAddReferralResponse);
+  rpc SetReferral(MsgSetReferral) returns (MsgSetReferralResponse);
 }
 
 message MsgAddReferral {
@@ -16,5 +17,14 @@ message MsgAddReferral {
 }
 
 message MsgAddReferralResponse {
+  Referral referral = 1 [(gogoproto.nullable) = false];
+}
+
+message MsgSetReferral {
+  string sender = 1;
+  string parent = 2;
+}
+
+message MsgSetReferralResponse {
   Referral referral = 1 [(gogoproto.nullable) = false];
 }

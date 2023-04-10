@@ -11,10 +11,15 @@ import (
 
 func RegisterLegacyAminoCodec(cdc *codec.LegacyAmino) {
 	cdc.RegisterConcrete(&MsgAddReferral{}, "referral/MsgAddReferral", nil)
+	cdc.RegisterConcrete(&MsgSetReferral{}, "referral/MsgSetReferral", nil)
 }
 
 func RegisterInterfaces(registry codectypes.InterfaceRegistry) {
-	registry.RegisterImplementations((*sdk.Msg)(nil), &MsgAddReferral{})
+	registry.RegisterImplementations(
+		(*sdk.Msg)(nil),
+		&MsgAddReferral{},
+		&MsgSetReferral{},
+	)
 	msgservice.RegisterMsgServiceDesc(registry, &_Msg_serviceDesc)
 }
 

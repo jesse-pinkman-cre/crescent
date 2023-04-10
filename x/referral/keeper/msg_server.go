@@ -32,3 +32,16 @@ func (m msgServer) AddReferral(c context.Context, msg *types.MsgAddReferral) (*t
 		Referral: referral,
 	}, nil
 }
+
+func (m msgServer) SetReferral(c context.Context, msg *types.MsgSetReferral) (*types.MsgSetReferralResponse, error) {
+	ctx := sdk.UnwrapSDKContext(c)
+
+	referral, err := m.Keeper.SetParent(
+		ctx, sdk.MustAccAddressFromBech32(msg.Sender), msg.Parent)
+	if err != nil {
+		return nil, err
+	}
+	return &types.MsgSetReferralResponse{
+		Referral: referral,
+	}, nil
+}

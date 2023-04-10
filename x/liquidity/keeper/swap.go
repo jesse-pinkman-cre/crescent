@@ -431,6 +431,7 @@ func (k Keeper) ApplyMatchResult(ctx sdk.Context, pair types.Pair, orders []amm.
 				k.SetOrder(ctx, o)
 			}
 			bulkOp.QueueSendCoins(pair.GetEscrowAddress(), order.Orderer, sdk.NewCoins(receivedCoin))
+			//TODO: JIHON : swap-fee referral
 
 			ctx.EventManager().EmitEvents(sdk.Events{
 				sdk.NewEvent(

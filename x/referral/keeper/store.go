@@ -69,7 +69,11 @@ func (k Keeper) GetReferralByAddr(ctx sdk.Context, addr sdk.AccAddress) (referra
 	if bz == nil {
 		return
 	}
-	return k.GetReferral(ctx, sdk.BigEndianToUint64(bz))
+	//return k.GetReferral(ctx, sdk.BigEndianToUint64(bz))
+	var val gogotypes.UInt64Value
+	k.cdc.MustUnmarshal(bz, &val)
+	referralID := val.GetValue()
+	return k.GetReferral(ctx, referralID)
 }
 
 func (k Keeper) GetReferralByCode(ctx sdk.Context, code string) (referral types.Referral, found bool) {
@@ -78,7 +82,11 @@ func (k Keeper) GetReferralByCode(ctx sdk.Context, code string) (referral types.
 	if bz == nil {
 		return
 	}
-	return k.GetReferral(ctx, sdk.BigEndianToUint64(bz))
+	//return k.GetReferral(ctx, sdk.BigEndianToUint64(bz))
+	var val gogotypes.UInt64Value
+	k.cdc.MustUnmarshal(bz, &val)
+	referralID := val.GetValue()
+	return k.GetReferral(ctx, referralID)
 }
 
 func (k Keeper) SetReferralByAddrIndex(ctx sdk.Context, addr sdk.AccAddress, referralID uint64) {
