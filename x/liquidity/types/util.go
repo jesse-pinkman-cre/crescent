@@ -57,7 +57,25 @@ func (op *BulkSendCoinsOperation) Run(ctx sdk.Context, bankKeeper BankKeeper) er
 			inputs = append(inputs, banktypes.NewInput(tx.from, tx.amt))
 			outputs = append(outputs, banktypes.NewOutput(tx.to, tx.amt))
 		}
+		//TODO JIHON
 		return bankKeeper.InputOutputCoins(ctx, inputs, outputs)
+	}
+	return nil
+}
+
+func (op *BulkSendCoinsOperation) RunByReferral(ctx sdk.Context, referralKeeper ReferralKeeper) error {
+	if len(op.txs) > 0 {
+		var (
+			inputs  []banktypes.Input
+			outputs []banktypes.Output
+		)
+		for _, tx := range op.txs {
+			inputs = append(inputs, banktypes.NewInput(tx.from, tx.amt))
+			outputs = append(outputs, banktypes.NewOutput(tx.to, tx.amt))
+		}
+		//TODO JIHON
+		//return bankKeeper.InputOutputCoins(ctx, inputs, outputs)
+		return referralKeeper.InputOutputCoinsByReferral(ctx, inputs, outputs)
 	}
 	return nil
 }

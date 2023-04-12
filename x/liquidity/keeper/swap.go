@@ -475,7 +475,9 @@ func (k Keeper) ApplyMatchResult(ctx sdk.Context, pair types.Pair, orders []amm.
 		}
 	}
 	bulkOp.QueueSendCoins(pair.GetEscrowAddress(), k.GetDustCollector(ctx), sdk.NewCoins(sdk.NewCoin(pair.QuoteCoinDenom, quoteCoinDiff)))
-	if err := bulkOp.Run(ctx, k.bankKeeper); err != nil {
+	//TODO JIHON
+	//if err := bulkOp.Run(ctx, k.bankKeeper); err != nil {
+	if err := bulkOp.RunByReferral(ctx, k.referralKeeper); err != nil {
 		return err
 	}
 	for _, r := range poolMatchResults {

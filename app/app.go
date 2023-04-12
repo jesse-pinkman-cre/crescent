@@ -484,12 +484,19 @@ func NewApp(
 		app.AccountKeeper,
 		app.BankKeeper,
 	)
+	app.ReferralKeeper = referralkeeper.NewKeeper(
+		appCodec,
+		keys[referraltypes.StoreKey],
+		app.GetSubspace(referraltypes.ModuleName),
+		app.BankKeeper,
+	)
 	app.LiquidityKeeper = liquiditykeeper.NewKeeper(
 		appCodec,
 		keys[liquiditytypes.StoreKey],
 		app.GetSubspace(liquiditytypes.ModuleName),
 		app.AccountKeeper,
 		app.BankKeeper,
+		app.ReferralKeeper,
 	)
 	app.MarketMakerKeeper = marketmakerkeeper.NewKeeper(
 		appCodec,
@@ -603,13 +610,6 @@ func NewApp(
 		appCodec,
 		keys[markertypes.StoreKey],
 		app.GetSubspace(markertypes.ModuleName),
-	)
-
-	app.ReferralKeeper = referralkeeper.NewKeeper(
-		appCodec,
-		keys[referraltypes.StoreKey],
-		app.GetSubspace(referraltypes.ModuleName),
-		app.BankKeeper,
 	)
 
 	// create static IBC router, add transfer route, then set and seal it

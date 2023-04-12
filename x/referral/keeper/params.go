@@ -1,12 +1,18 @@
 package keeper
 
 import (
+	"fmt"
+
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/jesse-pinkman-cre/crescent/x/referral/types"
 )
 
 // GetParams get all parameters as types.Params
 func (k Keeper) GetParams(ctx sdk.Context) (params types.Params) {
+	fmt.Println("===================================================")
+	fmt.Println(k.bankKeeper.GetSupply(ctx, "ucre"))
+	fmt.Println("===================================================")
+
 	k.paramSpace.GetParamSet(ctx, &params)
 	return
 }
