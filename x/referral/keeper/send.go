@@ -45,8 +45,16 @@ func (k Keeper) InputOutputCoinsByReferral(ctx sdk.Context, inputs []banktypes.I
 			newCoinsForParent sdk.Coins
 		)
 		for _, coin := range out.Coins {
-			newCoinsForOwner = append(newCoinsForOwner, sdk.NewCoin(coin.Denom, coin.Amount.Quo(sdk.NewInt(4)).Mul(sdk.NewInt(3))))
-			newCoinsForParent = append(newCoinsForParent, sdk.NewCoin(coin.Denom, coin.Amount.Quo(sdk.NewInt(4))))
+			// amount(int -> dec) * GetMaxParentDepth = newAmount(dec -> int)
+			// func GetShareValue(amount sdk.Int, ratio sdk.Dec) sdk.Int {
+			// 	return amount.ToDec().MulTruncate(ratio).TruncateInt()
+			// }
+			newAmtForParent := coin.Amount.ToDec().MulTruncate(k.GetSwapFeeReferralRate(ctx)).TruncateInt()
+			newAmtForOwner := coin.Amount.Sub(newAmtForParent)
+			newCoinsForOwner = append(newCoinsForOwner, sdk.NewCoin(coin.Denom, newAmtForOwner))
+			if newAmtForParent.GT(sdk.NewInt(0)) {
+				newCoinsForParent = append(newCoinsForParent, sdk.NewCoin(coin.Denom, newAmtForParent))
+			}
 		}
 		outputForOwner := banktypes.Output{
 			Address: out.Address,
@@ -57,6 +65,17 @@ func (k Keeper) InputOutputCoinsByReferral(ctx sdk.Context, inputs []banktypes.I
 			Coins:   newCoinsForParent,
 		}
 		newOutputs = append(newOutputs, outputForOwner, outputForParent)
+		// ctx.EventManager().EmitEvents(sdk.Events{
+		// 	sdk.NewEvent(
+		// 		types.EventTypePoolOrderMatched,
+		// 		sdk.NewAttribute(types.AttributeKeyOrderDirection, r.OrderDirection.String()),
+		// 		sdk.NewAttribute(types.AttributeKeyPairId, strconv.FormatUint(pair.Id, 10)),
+		// 		sdk.NewAttribute(types.AttributeKeyPoolId, strconv.FormatUint(r.PoolId, 10)),
+		// 		sdk.NewAttribute(types.AttributeKeyMatchedAmount, r.MatchedAmount.String()),
+		// 		sdk.NewAttribute(types.AttributeKeyPaidCoin, r.PaidCoin.String()),
+		// 		sdk.NewAttribute(types.AttributeKeyReceivedCoin, r.ReceivedCoin.String()),
+		// 	),
+		// })
 	}
 	fmt.Println(newOutputs)
 	return k.bankKeeper.InputOutputCoins(ctx, inputs, newOutputs)

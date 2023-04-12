@@ -24,8 +24,8 @@ const (
 var (
 	DefaultMaxParentDepth           = sdk.NewInt(3)
 	DefaultSwapFeeRate              = sdk.ZeroDec()
-	DefaultSwapFeeReferralRate      = sdk.ZeroDec()
-	DefaultSwapFeeParentRate        = sdk.NewDecWithPrec(1, 1) // 10%
+	DefaultSwapFeeReferralRate      = sdk.NewDecWithPrec(3, 1) // 30%
+	DefaultSwapFeeParentRate        = sdk.NewDecWithPrec(3, 1) // 30%
 	DefaultMinNumChildForTierSilver = sdk.NewInt(15)
 	DefaultFeeCollectorAddress      = farmingtypes.DeriveAddress(AddressType, ModuleName, "FeeCollector")
 )

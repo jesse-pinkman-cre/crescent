@@ -32,3 +32,9 @@ func (k Keeper) GetMaxParentDepth(ctx sdk.Context) (maxParentDepth sdk.Int) {
 func (k Keeper) SetMaxParentDepth(ctx sdk.Context, i sdk.Int) {
 	k.paramSpace.Set(ctx, types.KeyMaxParentDepth, i)
 }
+
+// GetMaxParentDepth returns the maximum parent depth for bonus distribution parameter.
+func (k Keeper) GetSwapFeeReferralRate(ctx sdk.Context) (swapFeeReferralRate sdk.Dec) {
+	k.paramSpace.Get(ctx, types.KeySwapFeeReferralRate, &swapFeeReferralRate)
+	return
+}
