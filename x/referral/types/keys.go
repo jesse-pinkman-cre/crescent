@@ -25,7 +25,7 @@ var (
 	ReferralKeyPrefix            = []byte{0xde}
 	ReferralByAddrIndexKeyPrefix = []byte{0xdd}
 	ReferralByCodeIndexKeyPrefix = []byte{0xdc}
-	RevenueKeyPrefix             = []byte{0xd2}
+	RevenueKeyPrefix             = []byte{0xdb}
 )
 
 func GetReferralKey(referralID uint64) []byte {
