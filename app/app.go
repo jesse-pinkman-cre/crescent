@@ -106,49 +106,49 @@ import (
 	budgettypes "github.com/tendermint/budget/x/budget/types"
 
 	// core modules
-	farmingparams "github.com/crescent-network/crescent/v5/app/params"
-	v2_0_0 "github.com/crescent-network/crescent/v5/app/upgrades/mainnet/v2.0.0"
-	v3 "github.com/crescent-network/crescent/v5/app/upgrades/mainnet/v3"
-	v4 "github.com/crescent-network/crescent/v5/app/upgrades/mainnet/v4"
-	v5 "github.com/crescent-network/crescent/v5/app/upgrades/mainnet/v5"
-	"github.com/crescent-network/crescent/v5/app/upgrades/testnet/rc4"
-	"github.com/crescent-network/crescent/v5/x/claim"
-	claimkeeper "github.com/crescent-network/crescent/v5/x/claim/keeper"
-	claimtypes "github.com/crescent-network/crescent/v5/x/claim/types"
-	"github.com/crescent-network/crescent/v5/x/farming"
-	farmingclient "github.com/crescent-network/crescent/v5/x/farming/client"
-	farmingkeeper "github.com/crescent-network/crescent/v5/x/farming/keeper"
-	farmingtypes "github.com/crescent-network/crescent/v5/x/farming/types"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming"
-	liquidfarmingkeeper "github.com/crescent-network/crescent/v5/x/liquidfarming/keeper"
-	liquidfarmingtypes "github.com/crescent-network/crescent/v5/x/liquidfarming/types"
-	"github.com/crescent-network/crescent/v5/x/liquidity"
-	liquiditykeeper "github.com/crescent-network/crescent/v5/x/liquidity/keeper"
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
-	"github.com/crescent-network/crescent/v5/x/liquidstaking"
-	liquidstakingkeeper "github.com/crescent-network/crescent/v5/x/liquidstaking/keeper"
-	liquidstakingtypes "github.com/crescent-network/crescent/v5/x/liquidstaking/types"
-	"github.com/crescent-network/crescent/v5/x/lpfarm"
-	lpfarmclient "github.com/crescent-network/crescent/v5/x/lpfarm/client"
-	lpfarmkeeper "github.com/crescent-network/crescent/v5/x/lpfarm/keeper"
-	lpfarmtypes "github.com/crescent-network/crescent/v5/x/lpfarm/types"
-	"github.com/crescent-network/crescent/v5/x/marker"
-	markerkeeper "github.com/crescent-network/crescent/v5/x/marker/keeper"
-	markertypes "github.com/crescent-network/crescent/v5/x/marker/types"
-	"github.com/crescent-network/crescent/v5/x/marketmaker"
-	marketmakerclient "github.com/crescent-network/crescent/v5/x/marketmaker/client"
-	marketmakerkeeper "github.com/crescent-network/crescent/v5/x/marketmaker/keeper"
-	marketmakertypes "github.com/crescent-network/crescent/v5/x/marketmaker/types"
-	"github.com/crescent-network/crescent/v5/x/mint"
-	mintkeeper "github.com/crescent-network/crescent/v5/x/mint/keeper"
-	minttypes "github.com/crescent-network/crescent/v5/x/mint/types"
+	farmingparams "github.com/jesse-pinkman-cre/crescent/app/params"
+	v2_0_0 "github.com/jesse-pinkman-cre/crescent/app/upgrades/mainnet/v2.0.0"
+	v3 "github.com/jesse-pinkman-cre/crescent/app/upgrades/mainnet/v3"
+	v4 "github.com/jesse-pinkman-cre/crescent/app/upgrades/mainnet/v4"
+	v5 "github.com/jesse-pinkman-cre/crescent/app/upgrades/mainnet/v5"
+	"github.com/jesse-pinkman-cre/crescent/app/upgrades/testnet/rc4"
+	"github.com/jesse-pinkman-cre/crescent/x/claim"
+	claimkeeper "github.com/jesse-pinkman-cre/crescent/x/claim/keeper"
+	claimtypes "github.com/jesse-pinkman-cre/crescent/x/claim/types"
+	"github.com/jesse-pinkman-cre/crescent/x/farming"
+	farmingclient "github.com/jesse-pinkman-cre/crescent/x/farming/client"
+	farmingkeeper "github.com/jesse-pinkman-cre/crescent/x/farming/keeper"
+	farmingtypes "github.com/jesse-pinkman-cre/crescent/x/farming/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming"
+	liquidfarmingkeeper "github.com/jesse-pinkman-cre/crescent/x/liquidfarming/keeper"
+	liquidfarmingtypes "github.com/jesse-pinkman-cre/crescent/x/liquidfarming/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity"
+	liquiditykeeper "github.com/jesse-pinkman-cre/crescent/x/liquidity/keeper"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidstaking"
+	liquidstakingkeeper "github.com/jesse-pinkman-cre/crescent/x/liquidstaking/keeper"
+	liquidstakingtypes "github.com/jesse-pinkman-cre/crescent/x/liquidstaking/types"
+	"github.com/jesse-pinkman-cre/crescent/x/lpfarm"
+	lpfarmclient "github.com/jesse-pinkman-cre/crescent/x/lpfarm/client"
+	lpfarmkeeper "github.com/jesse-pinkman-cre/crescent/x/lpfarm/keeper"
+	lpfarmtypes "github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
+	"github.com/jesse-pinkman-cre/crescent/x/marker"
+	markerkeeper "github.com/jesse-pinkman-cre/crescent/x/marker/keeper"
+	markertypes "github.com/jesse-pinkman-cre/crescent/x/marker/types"
+	"github.com/jesse-pinkman-cre/crescent/x/marketmaker"
+	marketmakerclient "github.com/jesse-pinkman-cre/crescent/x/marketmaker/client"
+	marketmakerkeeper "github.com/jesse-pinkman-cre/crescent/x/marketmaker/keeper"
+	marketmakertypes "github.com/jesse-pinkman-cre/crescent/x/marketmaker/types"
+	"github.com/jesse-pinkman-cre/crescent/x/mint"
+	mintkeeper "github.com/jesse-pinkman-cre/crescent/x/mint/keeper"
+	minttypes "github.com/jesse-pinkman-cre/crescent/x/mint/types"
 
 	"github.com/jesse-pinkman-cre/crescent/x/referral"
 	referralkeeper "github.com/jesse-pinkman-cre/crescent/x/referral/keeper"
 	referraltypes "github.com/jesse-pinkman-cre/crescent/x/referral/types"
 
 	// unnamed import of statik for swagger UI support
-	_ "github.com/crescent-network/crescent/v5/client/docs/statik"
+	_ "github.com/jesse-pinkman-cre/crescent/client/docs/statik"
 )
 
 var (
@@ -484,12 +484,19 @@ func NewApp(
 		app.AccountKeeper,
 		app.BankKeeper,
 	)
+	app.ReferralKeeper = referralkeeper.NewKeeper(
+		appCodec,
+		keys[referraltypes.StoreKey],
+		app.GetSubspace(referraltypes.ModuleName),
+		app.BankKeeper,
+	)
 	app.LiquidityKeeper = liquiditykeeper.NewKeeper(
 		appCodec,
 		keys[liquiditytypes.StoreKey],
 		app.GetSubspace(liquiditytypes.ModuleName),
 		app.AccountKeeper,
 		app.BankKeeper,
+		app.ReferralKeeper,
 	)
 	app.MarketMakerKeeper = marketmakerkeeper.NewKeeper(
 		appCodec,
@@ -603,13 +610,6 @@ func NewApp(
 		appCodec,
 		keys[markertypes.StoreKey],
 		app.GetSubspace(markertypes.ModuleName),
-	)
-
-	app.ReferralKeeper = referralkeeper.NewKeeper(
-		appCodec,
-		keys[referraltypes.StoreKey],
-		app.GetSubspace(referraltypes.ModuleName),
-		app.BankKeeper,
 	)
 
 	// create static IBC router, add transfer route, then set and seal it

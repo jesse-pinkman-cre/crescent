@@ -32,8 +32,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/x/crisis"
 	genutilcli "github.com/cosmos/cosmos-sdk/x/genutil/client/cli"
 
-	chain "github.com/crescent-network/crescent/v5/app"
-	farmingparams "github.com/crescent-network/crescent/v5/app/params"
+	chain "github.com/jesse-pinkman-cre/crescent/app"
+	farmingparams "github.com/jesse-pinkman-cre/crescent/app/params"
 )
 
 var (

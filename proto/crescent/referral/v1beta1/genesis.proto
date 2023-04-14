@@ -2,10 +2,14 @@ syntax = "proto3";
 package crescent.referral.v1beta1;
 
 import "crescent/referral/v1beta1/params.proto";
+import "crescent/referral/v1beta1/referral.proto";
 import "gogoproto/gogo.proto";
 
 option go_package = "github.com/jesse-pinkman-cre/crescent/x/referral/types";
 
 message GenesisState {
-  Params params = 1 [(gogoproto.nullable) = false];
+  Params            params           = 1 [(gogoproto.nullable) = false];
+  uint64            last_referral_id = 2;
+  repeated Referral referrals        = 3 [(gogoproto.nullable) = false];
+  repeated Revenue  revenues         = 4 [(gogoproto.nullable) = false];
 }

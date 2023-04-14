@@ -9,11 +9,11 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	chain "github.com/crescent-network/crescent/v5/app"
-	v5 "github.com/crescent-network/crescent/v5/app/upgrades/mainnet/v5"
-	"github.com/crescent-network/crescent/v5/cmd/crescentd/cmd"
-	utils "github.com/crescent-network/crescent/v5/types"
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
+	chain "github.com/jesse-pinkman-cre/crescent/app"
+	v5 "github.com/jesse-pinkman-cre/crescent/app/upgrades/mainnet/v5"
+	"github.com/jesse-pinkman-cre/crescent/cmd/crescentd/cmd"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
 )
 
 type UpgradeTestSuite struct {

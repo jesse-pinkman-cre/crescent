@@ -21,13 +21,13 @@ import (
 	tmcli "github.com/tendermint/tendermint/libs/cli"
 	dbm "github.com/tendermint/tm-db"
 
-	chain "github.com/crescent-network/crescent/v5/app"
-	"github.com/crescent-network/crescent/v5/app/params"
-	utils "github.com/crescent-network/crescent/v5/types"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/client/cli"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/types"
-	liquiditytestutil "github.com/crescent-network/crescent/v5/x/liquidity/client/testutil"
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
+	chain "github.com/jesse-pinkman-cre/crescent/app"
+	"github.com/jesse-pinkman-cre/crescent/app/params"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/client/cli"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/types"
+	liquiditytestutil "github.com/jesse-pinkman-cre/crescent/x/liquidity/client/testutil"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
 )
 
 type IntegrationTestSuite struct {

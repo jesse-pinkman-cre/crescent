@@ -35,13 +35,13 @@ import (
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 	dbm "github.com/tendermint/tm-db"
 
-	claimtypes "github.com/crescent-network/crescent/v5/x/claim/types"
-	farmingtypes "github.com/crescent-network/crescent/v5/x/farming/types"
-	liquiditytypes "github.com/crescent-network/crescent/v5/x/liquidity/types"
-	liquidstakingtypes "github.com/crescent-network/crescent/v5/x/liquidstaking/types"
-	lpfarmtypes "github.com/crescent-network/crescent/v5/x/lpfarm/types"
-	marketmakertypes "github.com/crescent-network/crescent/v5/x/marketmaker/types"
-	minttypes "github.com/crescent-network/crescent/v5/x/mint/types"
+	claimtypes "github.com/jesse-pinkman-cre/crescent/x/claim/types"
+	farmingtypes "github.com/jesse-pinkman-cre/crescent/x/farming/types"
+	liquiditytypes "github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
+	liquidstakingtypes "github.com/jesse-pinkman-cre/crescent/x/liquidstaking/types"
+	lpfarmtypes "github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
+	marketmakertypes "github.com/jesse-pinkman-cre/crescent/x/marketmaker/types"
+	minttypes "github.com/jesse-pinkman-cre/crescent/x/mint/types"
 )
 
 // Get flags every time the simulator is run

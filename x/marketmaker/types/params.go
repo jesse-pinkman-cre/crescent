@@ -9,7 +9,7 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	paramstypes "github.com/cosmos/cosmos-sdk/x/params/types"
 
-	farmingtypes "github.com/crescent-network/crescent/v5/x/farming/types"
+	farmingtypes "github.com/jesse-pinkman-cre/crescent/x/farming/types"
 )
 
 const (

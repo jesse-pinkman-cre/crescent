@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	utils "github.com/crescent-network/crescent/v5/types"
+	utils "github.com/jesse-pinkman-cre/crescent/types"
 )
 
 // NewGenesisState creates a new GenesisState object

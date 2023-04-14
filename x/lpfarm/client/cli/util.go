@@ -5,7 +5,7 @@ import (
 
 	"github.com/cosmos/cosmos-sdk/codec"
 
-	"github.com/crescent-network/crescent/v5/x/lpfarm/types"
+	"github.com/jesse-pinkman-cre/crescent/x/lpfarm/types"
 )
 
 func ParseFarmingPlanProposal(cdc codec.JSONCodec, proposalFile string) (types.FarmingPlanProposal, error) {

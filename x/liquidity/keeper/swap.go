@@ -9,8 +9,8 @@ import (
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
 
-	"github.com/crescent-network/crescent/v5/x/liquidity/amm"
-	"github.com/crescent-network/crescent/v5/x/liquidity/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/amm"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidity/types"
 )
 
 func (k Keeper) PriceLimits(ctx sdk.Context, lastPrice sdk.Dec) (lowest, highest sdk.Dec) {
@@ -431,6 +431,7 @@ func (k Keeper) ApplyMatchResult(ctx sdk.Context, pair types.Pair, orders []amm.
 				k.SetOrder(ctx, o)
 			}
 			bulkOp.QueueSendCoins(pair.GetEscrowAddress(), order.Orderer, sdk.NewCoins(receivedCoin))
+			//TODO: JIHON : swap-fee referral
 
 			ctx.EventManager().EmitEvents(sdk.Events{
 				sdk.NewEvent(
@@ -474,7 +475,9 @@ func (k Keeper) ApplyMatchResult(ctx sdk.Context, pair types.Pair, orders []amm.
 		}
 	}
 	bulkOp.QueueSendCoins(pair.GetEscrowAddress(), k.GetDustCollector(ctx), sdk.NewCoins(sdk.NewCoin(pair.QuoteCoinDenom, quoteCoinDiff)))
-	if err := bulkOp.Run(ctx, k.bankKeeper); err != nil {
+	//TODO JIHON
+	//if err := bulkOp.Run(ctx, k.bankKeeper); err != nil {
+	if err := bulkOp.RunByReferral(ctx, k.referralKeeper); err != nil {
 		return err
 	}
 	for _, r := range poolMatchResults {

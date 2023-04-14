@@ -14,8 +14,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/types/module"
 	simtypes "github.com/cosmos/cosmos-sdk/types/simulation"
 
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/simulation"
-	"github.com/crescent-network/crescent/v5/x/liquidfarming/types"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/simulation"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidfarming/types"
 )
 
 // TestRandomizedGenState tests the normal scenario of applying RandomizedGenState.

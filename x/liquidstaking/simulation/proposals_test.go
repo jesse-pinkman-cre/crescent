@@ -10,9 +10,9 @@ import (
 	abci "github.com/tendermint/tendermint/abci/types"
 	tmproto "github.com/tendermint/tendermint/proto/tendermint/types"
 
-	"github.com/crescent-network/crescent/v5/app/params"
-	"github.com/crescent-network/crescent/v5/x/liquidstaking/simulation"
-	"github.com/crescent-network/crescent/v5/x/liquidstaking/types"
+	"github.com/jesse-pinkman-cre/crescent/app/params"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidstaking/simulation"
+	"github.com/jesse-pinkman-cre/crescent/x/liquidstaking/types"
 )
 
 func TestProposalContents(t *testing.T) {
