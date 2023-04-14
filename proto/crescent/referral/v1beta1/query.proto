@@ -26,6 +26,9 @@ service Query {
   rpc ReferralByCode(QueryReferralByCodeRequest) returns (QueryReferralResponse) {
     option (google.api.http).get = "/crescent/referral/v1beta1/referral/code/{code}";
   }
+  rpc Revenues(QueryRevenuesRequest) returns (QueryRevenuesResponse) {
+    option (google.api.http).get = "/crescent/referral/v1beta1/revenues";
+  }
 }
 
 message QueryParamsRequest {}
@@ -57,4 +60,13 @@ message QueryReferralByAddrRequest {
 
 message QueryReferralByCodeRequest {
   string code = 1;
+}
+
+message QueryRevenuesRequest {
+  cosmos.base.query.v1beta1.PageRequest pagination = 1;
+}
+
+message QueryRevenuesResponse {
+  repeated Revenue                       revenues   = 1 [(gogoproto.nullable) = false];
+  cosmos.base.query.v1beta1.PageResponse pagination = 2;
 }

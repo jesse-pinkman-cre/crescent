@@ -1,5 +1,9 @@
 package types
 
+import (
+	sdk "github.com/cosmos/cosmos-sdk/types"
+)
+
 const (
 // ReserveAddressPrefix = "referral/reserve/"
 // ShareDenomPrefix     = "amm/share/"
@@ -22,5 +26,12 @@ func SetParent(referral Referral, parent string) Referral {
 		Code:   referral.Code,
 		Parent: parent,
 		Tier:   referral.Tier,
+	}
+}
+
+func NewRevenue(revenueID uint64) Revenue {
+	return Revenue{
+		ReferralId: revenueID,
+		Coins:      sdk.NewCoins(),
 	}
 }

@@ -15,6 +15,9 @@ func (k Keeper) InitGenesis(ctx sdk.Context, genState types.GenesisState) {
 		k.SetReferralByAddrIndex(ctx, sdk.AccAddress(referral.Addr), referral.Id)
 		k.SetReferralByCodeIndex(ctx, referral.Code, referral.Id)
 	}
+	for _, revenue := range genState.Revenues {
+		k.SetRevenue(ctx, revenue)
+	}
 }
 
 // ExportGenesis returns the module's exported genesis
@@ -23,5 +26,6 @@ func (k Keeper) ExportGenesis(ctx sdk.Context) *types.GenesisState {
 		k.GetParams(ctx),
 		k.GetLastReferralID(ctx),
 		k.GetAllReferrals(ctx),
+		k.GetAllRevenues(ctx),
 	)
 }

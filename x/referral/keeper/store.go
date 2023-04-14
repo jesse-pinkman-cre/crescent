@@ -110,3 +110,40 @@ func (k Keeper) DeleteReferralByCodeIndex(ctx sdk.Context, code string) {
 	store := ctx.KVStore(k.storeKey)
 	store.Delete(types.GetReferralByCodeIndexKey(code))
 }
+
+func (k Keeper) GetRevenue(ctx sdk.Context, revenueID uint64) (revenue types.Revenue, found bool) {
+	store := ctx.KVStore(k.storeKey)
+	bz := store.Get(types.GetRevenueKey(revenueID))
+	if bz == nil {
+		return
+	}
+	k.cdc.MustUnmarshal(bz, &revenue)
+	return revenue, true
+}
+
+func (k Keeper) SetRevenue(ctx sdk.Context, revenue types.Revenue) {
+	store := ctx.KVStore(k.storeKey)
+	bz := k.cdc.MustMarshal(&revenue)
+	store.Set(types.GetRevenueKey(revenue.ReferralId), bz)
+}
+
+func (k Keeper) IterateAllRevenues(ctx sdk.Context, cb func(revenue types.Revenue) (stop bool)) {
+	store := ctx.KVStore(k.storeKey)
+	iter := sdk.KVStorePrefixIterator(store, types.RevenueKeyPrefix)
+	defer iter.Close()
+	for ; iter.Valid(); iter.Next() {
+		var revenue types.Revenue
+		k.cdc.MustUnmarshal(iter.Value(), &revenue)
+		if cb(revenue) {
+			break
+		}
+	}
+}
+
+func (k Keeper) GetAllRevenues(ctx sdk.Context) (revenues []types.Revenue) {
+	k.IterateAllRevenues(ctx, func(revenue types.Revenue) (stop bool) {
+		revenues = append(revenues, revenue)
+		return false
+	})
+	return
+}

@@ -33,13 +33,6 @@ func (k Keeper) AddReferral(ctx sdk.Context, fromAddr sdk.AccAddress, code strin
 		return
 	}
 
-	// mintedShare = sdk.NewCoin(shareDenom, share)
-	// if err = k.bankKeeper.MintCoins(ctx, types.ModuleName, sdk.NewCoins(mintedShare)); err != nil {
-	// 	return
-	// }
-	// if err = k.bankKeeper.SendCoinsFromModuleToAccount(ctx, types.ModuleName, fromAddr, sdk.NewCoins(mintedShare)); err != nil {
-	// 	return
-	// }
 	return referral, nil
 }
 
@@ -63,5 +56,4 @@ func (k Keeper) SetParent(ctx sdk.Context, fromAddr sdk.AccAddress, parent strin
 	referral.Parent = parent
 	k.SetReferral(ctx, referral)
 	return referral, nil
-
 }

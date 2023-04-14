@@ -16,7 +16,7 @@ const (
 	RouterKey = ModuleName
 
 	// MemStoreKey defines the in-memory store key
-	MemStoreKey = "mem_amm"
+	MemStoreKey = "mem_referral"
 )
 
 var (
@@ -24,7 +24,8 @@ var (
 
 	ReferralKeyPrefix            = []byte{0xde}
 	ReferralByAddrIndexKeyPrefix = []byte{0xdd}
-	ReferralByCodeIndexKeyPrefix = []byte{0xdd}
+	ReferralByCodeIndexKeyPrefix = []byte{0xdc}
+	RevenueKeyPrefix             = []byte{0xd2}
 )
 
 func GetReferralKey(referralID uint64) []byte {
@@ -38,6 +39,10 @@ func GetReferralByAddrIndexKey(addr sdk.AccAddress) []byte {
 
 func GetReferralByCodeIndexKey(code string) []byte {
 	return append(ReferralByCodeIndexKeyPrefix, LengthPrefixString(code)...)
+}
+
+func GetRevenueKey(revenueID uint64) []byte {
+	return append(RevenueKeyPrefix, sdk.Uint64ToBigEndian(revenueID)...)
 }
 
 // LengthPrefixString returns length-prefixed bytes representation

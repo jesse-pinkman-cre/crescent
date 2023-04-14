@@ -2,14 +2,15 @@ package types
 
 // DefaultGenesis returns the default genesis state
 func DefaultGenesis() *GenesisState {
-	return NewGenesisState(DefaultParams(), 0, nil)
+	return NewGenesisState(DefaultParams(), 0, nil, nil)
 }
 
-func NewGenesisState(params Params, lastReferralId uint64, referrals []Referral) *GenesisState {
+func NewGenesisState(params Params, lastReferralId uint64, referrals []Referral, revenues []Revenue) *GenesisState {
 	return &GenesisState{
 		Params:         params,
 		LastReferralId: lastReferralId,
 		Referrals:      referrals,
+		Revenues:       revenues,
 	}
 }
 

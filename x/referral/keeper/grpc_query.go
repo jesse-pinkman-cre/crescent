@@ -103,3 +103,32 @@ func (k Querier) ReferralByCode(c context.Context, req *types.QueryReferralByCod
 		Referral: referral,
 	}, nil
 }
+
+func (k Querier) Revenues(c context.Context, req *types.QueryRevenuesRequest) (*types.QueryRevenuesResponse, error) {
+	if req == nil {
+		return nil, status.Error(codes.InvalidArgument, "invalid request")
+	}
+
+	ctx := sdk.UnwrapSDKContext(c)
+
+	store := ctx.KVStore(k.storeKey)
+	rStore := prefix.NewStore(store, types.RevenueKeyPrefix)
+	var revenues []types.Revenue
+	pageRes, err := query.Paginate(rStore, req.Pagination, func(key, value []byte) error {
+		var revenue types.Revenue
+		if err := k.cdc.Unmarshal(value, &revenue); err != nil {
+			return err
+		}
+		revenues = append(revenues, revenue)
+		return nil
+	})
+
+	if err != nil {
+		return nil, status.Error(codes.Internal, err.Error())
+	}
+
+	return &types.QueryRevenuesResponse{
+		Revenues:   revenues,
+		Pagination: pageRes,
+	}, nil
+}

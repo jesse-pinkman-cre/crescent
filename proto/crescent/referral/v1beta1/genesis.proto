@@ -11,4 +11,5 @@ message GenesisState {
   Params            params           = 1 [(gogoproto.nullable) = false];
   uint64            last_referral_id = 2;
   repeated Referral referrals        = 3 [(gogoproto.nullable) = false];
+  repeated Revenue  revenues         = 4 [(gogoproto.nullable) = false];
 }
